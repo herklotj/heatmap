@@ -8,19 +8,19 @@ sql_table_name: aapricing.heatmap ;;
   }
 
 
-#  measure: quotes {
-#    type: number
-#    sql: sum(${quotes}) ;;
-#  }#
-#
-#  measure: sales {
-#    type: number
-#    sql: sum(${sales}) ;;
-#  }
+  measure: quotes {
+    type: sum
+    sql: ${TABLE}.quotes ;;
+  }
+
+  measure: sales {
+    type: sum
+    sql: ${TABLE}.sales ;;
+  }
 
   measure: conversion {
     type: number
-    sql: sum(sales)/sum(quotes) ;;
+    sql: sum(${TABLE}.sales)/sum(${TABLE}.quotes) ;;
     value_format: "0.00%"
   }
 
