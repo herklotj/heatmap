@@ -9,3 +9,5 @@ datagroup: heatmapping_default_datagroup {
 }
 
 persist_with: heatmapping_default_datagroup
+
+explore: heatmapping {}
