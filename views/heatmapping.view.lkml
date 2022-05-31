@@ -1,5 +1,5 @@
 view: heatmapping {
-sql_table_name: heatmap ;;
+sql_table_name: aapricing.heatmap ;;
 
 
   dimension: ad_rated_area {
