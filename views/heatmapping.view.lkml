@@ -43,6 +43,80 @@ sql_table_name: aapricing.heatmap ;;
     sql: ${TABLE}.pi_go_live_credit_score ;;
   }
 
+  dimension: leadtime {
+    type:  number
+    sql: ${TABLE}.leadtime ;;
+  }
+
+  dimension: ph_age {
+    type:  number
+    sql: ${TABLE}.ph_age ;;
+  }
+
+  dimension: max_age {
+    type:  number
+    sql: ${TABLE}.max_age ;;
+  }
+
+  dimension: min_age {
+    type:  number
+    sql: ${TABLE}.min_age ;;
+  }
+
+  dimension: min_ly {
+    type:  number
+    sql: ${TABLE}.min_ly ;;
+  }
+
+  dimension: num_not_full_uk_lic {
+    type:  number
+    sql: ${TABLE}.num_not_full_uk_lic ;;
+  }
+
+  dimension: ncd_years {
+    type:  number
+    sql: ${TABLE}.ncd_years ;;
+  }
+
+  dimension: num_unemployed {
+    type:  number
+    sql: ${TABLE}.num_unemployed ;;
+  }
+
+  dimension: num_drivers {
+    type:  number
+    sql: ${TABLE}.num_drivers ;;
+  }
+
+  dimension: num_not_res_since_birth {
+    type:  number
+    sql: ${TABLE}.num_not_res_since_birth ;;
+  }
+
+  dimension: breakdown_prop {
+    type:  number
+    sql: ${TABLE}.breakdown_prop ;;
+  }
+
+  dimension: scheme {
+    type:  number
+    sql: ${TABLE}.scheme ;;
+  }
+
+  dimension: driving_restriction {
+    type:  string
+    sql: ${TABLE}.dr ;;
+  }
+
+  dimension: business_use {
+    type:  string
+    sql: ${TABLE}.business_use ;;
+  }
+
+    dimension: sira {
+      type:  string
+      sql: ${TABLE}.sira ;;
+  }
 ###################### Measures ######################################
 
   measure: quotes {
