@@ -1,5 +1,5 @@
 view: heatmapping {
-sql_table_name: aapricing.heatmap ;;
+  sql_table_name: aapricing.heatmap ;;
 
 ###################### Dimensions ######################################
 
@@ -113,9 +113,9 @@ sql_table_name: aapricing.heatmap ;;
     sql: ${TABLE}.business_use ;;
   }
 
-    dimension: sira {
-      type:  string
-      sql: ${TABLE}.sira ;;
+  dimension: sira {
+    type:  string
+    sql: ${TABLE}.sira ;;
   }
 
   dimension: ws_claims {
@@ -145,12 +145,12 @@ sql_table_name: aapricing.heatmap ;;
 
   dimension: purchased_years_ago {
     type:  number
-    sql: ${TABLE}.pya ;;
+    sql: case when ${TABLE}.pya>15 then 15 else ${TABLE}.pya end ;;
   }
 
   dimension: manufactured_years_ago {
     type:  number
-    sql: ${TABLE}.mya ;;
+    sql: case when ${TABLE}.mya > 20 then 20 else ${TABLE}.mya end ;;
   }
 
   dimension: value {
