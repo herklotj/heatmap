@@ -175,7 +175,20 @@ sql_table_name: aapricing.heatmap ;;
 
   dimension: manufacturer {
     type:  string
-    sql: ${TABLE}.manufacturer ;;
+    sql: case when ${TABLE}.manufacturer = 'CHEVROLET GMC' THEN 'CHEVROLET'
+              WHEN ${TABLE}.manufacturer = '' THEN NULL
+              WHEN ${TABLE}.manufacturer = 'LAND ROVER' THEN 'LANDROVER'
+              WHEN ${TABLE}.manufacturer = 'LAND/RANGE ROVER' THEN 'LANDROVER'
+              WHEN ${TABLE}.manufacturer = 'MERCEDES' THEN 'MERCEDES-BENZ'
+              WHEN ${TABLE}.manufacturer = 'MERCEDES BENZ' THEN 'MERCEDES-BENZ'
+              WHEN ${TABLE}.manufacturer = 'MG' THEN 'MG MOTOR UK'
+              WHEN ${TABLE}.manufacturer = 'MG-MOTOR UK' THEN 'MG MOTOR UK'
+              WHEN ${TABLE}.manufacturer = 'OTHERS' THEN NULL
+              WHEN ${TABLE}.manufacturer = 'NISSAN / DATSUN' THEN 'NISSAN'
+              WHEN ${TABLE}.manufacturer = 'SUBARU FORRESTER S' THEN 'SUBARU'
+              WHEN ${TABLE}.manufacturer = 'TOYOTA YARIS 1.3' THEN 'TOYOTA'
+              ELSE ${TABLE}.manufacturer END
+              ;;
   }
 
   dimension: engine_size {
