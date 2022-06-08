@@ -131,7 +131,7 @@ sql_table_name: aapricing.heatmap ;;
 
   measure: conversion {
     type: number
-    sql: ${sales}/${quotes} ;;
+    sql: (${sales}*1.00)/${quotes} ;;
     value_format: "0.00%"
   }
 
