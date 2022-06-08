@@ -176,4 +176,10 @@ sql_table_name: aapricing.heatmap ;;
     value_format: "0.00%"
   }
 
+  measure: Heat{
+    type: number
+    sql: ${Standardised_Capped_LR_50k}*${standardised_conversion} ;;
+    value_format: "0.00"
+  }
+
 }
