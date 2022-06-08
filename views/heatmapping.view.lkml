@@ -135,6 +135,12 @@ sql_table_name: aapricing.heatmap ;;
     value_format: "0.00%"
   }
 
+  measure: standardised_conversion {
+    type: number
+    sql: ((${sales}*1.00)/${quotes})/(311079/30668190) ;;
+    value_format: "0.00"
+  }
+
   measure: Uncapped_LR {
     type: number
     sql: sum(${TABLE}.total_incurred)/sum(${TABLE}.eprem) ;;
@@ -144,7 +150,13 @@ sql_table_name: aapricing.heatmap ;;
   measure: Capped_LR_50k {
     type: number
     sql: sum(${TABLE}.total_incurred_cap_50k)/sum(${TABLE}.eprem) ;;
-    value_format: "0.00%"
+    value_format: "0.0%"
+  }
+
+  measure: Standardised_Capped_LR_50k {
+    type: number
+    sql: (sum(${TABLE}.total_incurred_cap_50k)/sum(${TABLE}.eprem))/0.7423 ;;
+    value_format: "0.00"
   }
 
   measure: Capped_LR_25k{
