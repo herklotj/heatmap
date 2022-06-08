@@ -143,25 +143,25 @@ sql_table_name: aapricing.heatmap ;;
 
   measure: Uncapped_LR {
     type: number
-    sql: sum(${TABLE}.total_incurred)/greatest(sum(${TABLE}.eprem),0.01) ;;
+    sql: sum(${TABLE}.total_incurred)/greatest(sum(${TABLE}.eprem),1) ;;
     value_format: "0.0%"
   }
 
   measure: Capped_LR_50k {
     type: number
-    sql: sum(${TABLE}.total_incurred_cap_50k)/greatest(sum(${TABLE}.eprem),0.01) ;;
+    sql: sum(${TABLE}.total_incurred_cap_50k)/greatest(sum(${TABLE}.eprem),1) ;;
     value_format: "0.0%"
   }
 
   measure: Standardised_Capped_LR_50k {
     type: number
-    sql: (sum(${TABLE}.total_incurred_cap_50k)/greatest(sum(${TABLE}.eprem),0.01))/0.7423 ;;
+    sql: (sum(${TABLE}.total_incurred_cap_50k)/greatest(sum(${TABLE}.eprem),1))/0.7423 ;;
     value_format: "0.00"
   }
 
   measure: Capped_LR_25k{
     type: number
-    sql: sum(${TABLE}.total_incurred_cap_25k)/greatest(sum(${TABLE}.eprem),0.01) ;;
+    sql: sum(${TABLE}.total_incurred_cap_25k)/greatest(sum(${TABLE}.eprem),1) ;;
     value_format: "0.0%"
   }
 
@@ -172,7 +172,7 @@ sql_table_name: aapricing.heatmap ;;
 
   measure: Freq_exc_WS{
     type: number
-    sql: sum(${TABLE}.total_count_exc_ws)/greatest(sum(${TABLE}.evy),0.01) ;;
+    sql: sum(${TABLE}.total_count_exc_ws)/greatest(sum(${TABLE}.evy),1) ;;
     value_format: "0.00%"
   }
 
