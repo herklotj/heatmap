@@ -144,7 +144,7 @@ sql_table_name: aapricing.heatmap ;;
   measure: Capped_LR_50k {
     type: number
     sql: sum(${TABLE}.total_incurred_cap_50k)/sum(${TABLE}.eprem) ;;
-    value_format: "0.0%"
+    value_format: "0.00%"
   }
 
   measure: Capped_LR_25k{
