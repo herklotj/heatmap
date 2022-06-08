@@ -125,7 +125,7 @@ view: heatmapping {
 
   dimension: nonfault_claims {
     type:  number
-    sql: coalesce(${TABLE}.nonfault_claims,0) ;;
+    sql: case when coalesce(${TABLE}.nonfault_claims,0) > 5 then 5 else coalesce(${TABLE}.nonfault_claims,0) end ;;
   }
 
   dimension: fault_claims {
@@ -135,7 +135,7 @@ view: heatmapping {
 
   dimension: all_claims {
     type:  number
-    sql: coalesce(${TABLE}.all_claims,0) ;;
+    sql: case when coalesce(${TABLE}.all_claims,0) > 5 then 5 else coalesce(${TABLE}.all_claims,0) end ;;
   }
 
   dimension: convictions {
