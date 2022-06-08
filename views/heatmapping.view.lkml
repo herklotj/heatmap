@@ -137,7 +137,7 @@ sql_table_name: aapricing.heatmap ;;
 
   measure: standardised_conversion {
     type: number
-    sql: ((${sales}*1.00)/greatest(${quotes},1))/(311079/30668190) ;;
+    sql: ((${sales}*1.00)/greatest(${quotes},1))/0.0107955180921991;;
     value_format: "0.00"
   }
 
