@@ -95,7 +95,7 @@ sql_table_name: aapricing.heatmap ;;
 
   dimension: breakdown_prop {
     type:  number
-    sql: ${TABLE}.breakdown_prop ;;
+    sql: round(${TABLE}.breakdown_prop,2) ;;
   }
 
   dimension: scheme {
@@ -116,6 +116,66 @@ sql_table_name: aapricing.heatmap ;;
     dimension: sira {
       type:  string
       sql: ${TABLE}.sira ;;
+  }
+
+  dimension: ws_claims {
+    type:  number
+    sql: coalesce(${TABLE}.ws_claims,0) ;;
+  }
+
+  dimension: nonfault_claims {
+    type:  number
+    sql: coalesce(${TABLE}.nonfault_claims,0) ;;
+  }
+
+  dimension: fault_claims {
+    type:  number
+    sql: coalesce(${TABLE}.fault_claims,0) ;;
+  }
+
+  dimension: all_claims {
+    type:  number
+    sql: coalesce(${TABLE}.all_claims,0) ;;
+  }
+
+  dimension: convictions {
+    type:  number
+    sql: coalesce(${TABLE}.convictions,0) ;;
+  }
+
+  dimension: purchased_years_ago {
+    type:  number
+    sql: ${TABLE}.pya ;;
+  }
+
+  dimension: manufactured_years_ago {
+    type:  number
+    sql: ${TABLE}.mya ;;
+  }
+
+  dimension: value {
+    type:  string
+    sql: ${TABLE}.value ;;
+  }
+
+  dimension: annual_mileage {
+    type:  string
+    sql: ${TABLE}.annual_mileage ;;
+  }
+
+  dimension: owner {
+    type:  string
+    sql: ${TABLE}.owner ;;
+  }
+
+  dimension: registered_keeper {
+    type:  string
+    sql: ${TABLE}.registered_keeper ;;
+  }
+
+  dimension: manufacturer {
+    type:  string
+    sql: ${TABLE}.manufacturer ;;
   }
 ###################### Measures ######################################
 
