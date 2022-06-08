@@ -168,6 +168,7 @@ sql_table_name: aapricing.heatmap ;;
   measure: Exposure {
     type: sum
     sql: ${TABLE}.evy ;;
+    value_format: "0.0"
   }
 
   measure: Freq_exc_WS{
