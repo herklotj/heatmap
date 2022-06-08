@@ -131,37 +131,37 @@ sql_table_name: aapricing.heatmap ;;
 
   measure: conversion {
     type: number
-    sql: (${sales}*1.00)/${quotes} ;;
+    sql: (${sales}*1.00)/greatest(${quotes},1) ;;
     value_format: "0.00%"
   }
 
   measure: standardised_conversion {
     type: number
-    sql: ((${sales}*1.00)/${quotes})/(311079/30668190) ;;
+    sql: ((${sales}*1.00)/greatest(${quotes},1))/(311079/30668190) ;;
     value_format: "0.00"
   }
 
   measure: Uncapped_LR {
     type: number
-    sql: sum(${TABLE}.total_incurred)/sum(${TABLE}.eprem) ;;
+    sql: sum(${TABLE}.total_incurred)/greatest(sum(${TABLE}.eprem),0.01) ;;
     value_format: "0.0%"
   }
 
   measure: Capped_LR_50k {
     type: number
-    sql: sum(${TABLE}.total_incurred_cap_50k)/sum(${TABLE}.eprem) ;;
+    sql: sum(${TABLE}.total_incurred_cap_50k)/greatest(sum(${TABLE}.eprem),0.01) ;;
     value_format: "0.0%"
   }
 
   measure: Standardised_Capped_LR_50k {
     type: number
-    sql: (sum(${TABLE}.total_incurred_cap_50k)/sum(${TABLE}.eprem))/0.7423 ;;
+    sql: (sum(${TABLE}.total_incurred_cap_50k)/greatest(sum(${TABLE}.eprem),0.01))/0.7423 ;;
     value_format: "0.00"
   }
 
   measure: Capped_LR_25k{
     type: number
-    sql: sum(${TABLE}.total_incurred_cap_25k)/sum(${TABLE}.eprem) ;;
+    sql: sum(${TABLE}.total_incurred_cap_25k)/greatest(sum(${TABLE}.eprem),0.01) ;;
     value_format: "0.0%"
   }
 
@@ -172,7 +172,7 @@ sql_table_name: aapricing.heatmap ;;
 
   measure: Freq_exc_WS{
     type: number
-    sql: sum(${TABLE}.total_count_exc_ws)/sum(${TABLE}.evy) ;;
+    sql: sum(${TABLE}.total_count_exc_ws)/greatest(sum(${TABLE}.evy),0.01) ;;
     value_format: "0.00%"
   }
 
