@@ -177,6 +177,52 @@ sql_table_name: aapricing.heatmap ;;
     type:  string
     sql: ${TABLE}.manufacturer ;;
   }
+
+  dimension: engine_size {
+    type:  string
+    sql: ${TABLE}.engine_size ;;
+  }
+
+  dimension: fuel_type {
+    type:  string
+    sql: ${TABLE}.fuel_type ;;
+  }
+
+  dimension: transmission {
+    type:  string
+    sql: ${TABLE}.transmission ;;
+  }
+
+  dimension: body_style {
+    type:  string
+    sql: ${TABLE}.body_style ;;
+  }
+
+  dimension: power_bhp {
+    type:  string
+    sql: ${TABLE}.power_bhp ;;
+  }
+
+  dimension: bhp_area_ratio {
+    type:  number
+    sql: ${TABLE}.bhp_area_ratio ;;
+  }
+
+  dimension: postal_region {
+    type:  string
+    sql: ${TABLE}.postal_region ;;
+  }
+
+  dimension: postal_area {
+    type:  string
+    sql: ${TABLE}.postal_area ;;
+  }
+
+  dimension: ecos1_s1_pi1_e1a011 {
+    type:  number
+    sql: ${TABLE}.ecos1_s1_pi1_e1a011 ;;
+  }
+
 ###################### Measures ######################################
 
   measure: quotes {
