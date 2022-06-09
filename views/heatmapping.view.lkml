@@ -203,7 +203,7 @@ view: heatmapping {
 
   dimension: transmission {
     type:  string
-    sql: ${TABLE}.transmission ;;
+    sql:  case when ${TABLE}.transmission in ('A','M') then ${TABLE}.transmission else null end;;
   }
 
   dimension: body_style {
