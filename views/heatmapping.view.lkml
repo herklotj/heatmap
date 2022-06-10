@@ -71,7 +71,7 @@ view: heatmapping {
 
   dimension: min_ly {
     type:  number
-    sql: ${TABLE}.min_ly ;;
+    sql: case when ${TABLE}.min_ly > 30 then 30 else ${TABLE}.min_ly end ;;
   }
 
   dimension: num_not_full_uk_lic {
