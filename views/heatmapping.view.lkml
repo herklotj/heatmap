@@ -262,7 +262,7 @@ view: heatmapping {
 
   measure: standardised_conversion {
     type: number
-    sql: ((${sales}*1.00)/greatest(${quotes},1))/0.0107955180921991;;
+    sql: ((${sales}*1.00)/greatest(${quotes},1))/0.0108547962434348;;
     value_format: "0.00"
   }
 
@@ -280,7 +280,7 @@ view: heatmapping {
 
   measure: Standardised_Capped_LR_50k {
     type: number
-    sql: (sum(${TABLE}.total_incurred_cap_50k)/greatest(sum(${TABLE}.eprem),1))/0.7423 ;;
+    sql: (sum(${TABLE}.total_incurred_cap_50k)/greatest(sum(${TABLE}.eprem),1))/0.7425937275318566 ;;
     value_format: "0.00"
   }
 
